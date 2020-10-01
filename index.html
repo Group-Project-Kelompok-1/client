@@ -17,7 +17,7 @@
 
 <body>
 
-  <section id="register">
+  <section id="register" style="min-height: 100vh; background-color: #272727;">
     <div class="container-fluid">
       <div class="card bg-light">
         <article class="card-body mx-auto" style="width: 50%;">
@@ -60,7 +60,7 @@
     </div>
   </section>
 
-  <section id="login">
+  <section id="login" style="min-height: 100vh; background-color: #272727;">
     <div class="container-fluid">
       <div class="card bg-light">
         <article class="card-body mx-auto" style="width: 50%;">
@@ -103,7 +103,7 @@
     </div>
   </section>
 
-  <section id="form_movie">
+  <section id="form_movie" style="min-height: 100vh; background-color: #272727;">
     <div class="container-fluid">
       <div class="card bg-light">
         <article class="card-body mx-auto" style="width: 50%;">
@@ -147,7 +147,7 @@
     </div>
   </section>
 
-  <section id="main-page">
+  <section id="main-page" style="min-height: 100vh; background-color: #272727;">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#" style="color: whitesmoke;">Todo</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -156,7 +156,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" href="#create" style="color: whitesmoke;">Add a new Todo</a>
+          <a class="nav-link" href="#create" style="color: whitesmoke;">Add a new Movie</a>
           <form class="form-inline">
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Sign out</button>
           </form>
@@ -167,16 +167,13 @@
     <div class="container-fluid">
       <div class="d-flex container widgets mb-5 justify-content-between">
         <div class="greeting">
-          <h2 class="mt-2">Welcome, <span>user@gmail.com</span></h2>
-        </div>
-        <div class="clock">
-          <h2>17:24</h2>
+          <h2 class="mt-2">Hello, <span>user@gmail.com</span></h2>
         </div>
       </div>
 
       <div class="row justify-content-center">
 
-        <div class="card border-danger mb-3 col-lg-4 col-md-6 col-sm-12 mx-4" style="max-width: 18rem;">
+        <div class="card border-success mb-3 col-lg-4 col-md-6 col-sm-12 mx-4" style="max-width: 18rem;">
           <div class="card-header bg-transparent border-danger">Category (movie/TVshow)</div>
           <div class="card-body text-danger">
             <h5 class="card-title">Movie or TV show title</h5>
@@ -208,12 +205,10 @@
     crossorigin="anonymous"></script>
   <script>
     $(document).ready(function () {
-      const baseURL = `http://localhost:3000`
-
-      function showRegister() {
-        $('#')
-      }
-
+      $('#login').show()
+      $('#register').hide()
+      $('#form_movie').hide()
+      $('#main_page').hide()
     })
 
   </script>
