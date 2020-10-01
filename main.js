@@ -1,6 +1,6 @@
 $(document).ready(function () {
     if (localStorage.getItem('access_token')) {
-        fetchTodos()
+        fetchMovies()
         showMainPage()
     } else {
         showLogin()

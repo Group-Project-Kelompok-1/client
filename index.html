@@ -44,7 +44,8 @@
               <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
               </div>
-              <input id="password-reg" name="pass_reg" class="form-control" placeholder="Create password" type="password">
+              <input id="password-reg" name="pass_reg" class="form-control" placeholder="Create password"
+                type="password">
             </div>
 
 
@@ -111,19 +112,14 @@
           <p class="text-center">Let us help you decide how to spend your lazy saturday night</p>
 
           <div class="form-group">
-            <label>Movies or TV shows?</label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="watch" value="movie">
-              <label class="form-check-label" for="exampleRadios1">
-                Movie
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="watch" value="show">
-              <label class="form-check-label" for="exampleRadios2">
-                TV show
-              </label>
-            </div>
+            <label for="due_date">Pick a genre</label>
+            <select name="genre" id="genre" style="width: 100%;">
+              <option value="horror">Horror</option>
+              <option value="action">Action</option>
+              <option value="romance">Romance</option>
+              <option value="drama">Drama</option>
+              <option value="animation">Animation</option>
+            </select> <br>
           </div>
 
           <div class="form-group">
@@ -171,20 +167,18 @@
         </div>
       </div>
 
-      <div class="row justify-content-center">
+      <div class="row justify-content-center" id="list-movie">
 
-        <div class="card border-success mb-3 col-lg-4 col-md-6 col-sm-12 mx-4" style="max-width: 18rem;">
-          <div class="card-header bg-transparent border-danger">Category (movie/TVshow)</div>
-          <div class="card-body text-danger">
-            <h5 class="card-title">Movie or TV show title</h5>
-            <p class="card-text">Rating: <span id="rating"></span></p>
-            <p class="card-text">Food: <span id="food"></span></p>
-          </div>
-          <div class="card-footer bg-transparent border-danger d-flex justify-content-center">
-            <div>
-              <a href="#update" class="btn btn-outline-success btn-sm" role="button">Add more to the list</a>
-              <button class="btn btn-outline-danger btn-sm">Delete</button>
-            </div>
+        <div class="card col-lg-4 col-md-6 col-sm-12 mb-3 mx-4" style="width: 18rem;">
+          <img class="card-img-top"
+            src="https://m.media-amazon.com/images/M/MV5BMzQ4OTA4YjYtMjQ5My00ZGEzLTkyOGYtNzk4NjZlYTc5MTBjXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">movieTitle (rating)</h5>
+            <p class="card-text">imdbId</p>
+            <p class="card-text">snack</p>
+            <p class="card-text">zomatoUrl</p>
+            <a href="#" class="btn btn-outline-danger">Delete</a>
           </div>
         </div>
 
@@ -203,8 +197,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
-    <script src="/helpers.js"></script>
-  <script src="/main.js"></script>
+  <!-- <script src="/helpers.js"></script>
+  <script src="/main.js"></script> -->
 </body>
 
 </html>
