@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Hello, </title>
+</head>
+
+<body>
+
+  <section id="register" style="min-height: 100vh; background-color: #272727;">
+    <div class="container-fluid">
+      <div class="card bg-light">
+        <article class="card-body mx-auto" style="width: 50%;">
+          <h3 class="card-title mt-3 text-center">Movie and Chill</h3>
+          <h4 class="card-title mt-3 text-center">Create Account</h4>
+          <p class="text-center">Get started with your free account</p>
+          <p>
+            <a href="" class="btn btn-block btn-danger" role="button"> <i class="fab fa-google"></i>   Sign up via
+              Google</a>
+          </p>
+          <p class="divider-text">
+            <span class="bg-light">OR</span>
+          </p>
+          <form>
+            <div class="form-group input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+              </div>
+              <input name="email_reg" class="form-control" placeholder="Email address" type="email">
+            </div>
+
+
+            <div class="form-group input-group mb-5">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+              </div>
+              <input name="pass_reg" class="form-control" placeholder="Create password" type="password">
+            </div>
+
+
+            <div class="form-group mt-4">
+              <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+            </div>
+            <p class="text-center">Have an account? <a href="#login" id="login-from-form">Log In</a> </p>
+          </form>
+        </article>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <section id="login" style="min-height: 100vh; background-color: #272727;">
+    <div class="container-fluid">
+      <div class="card bg-light">
+        <article class="card-body mx-auto" style="width: 50%;">
+          <h3 class="card-title mt-3 mb-4 text-center">Movie and Chill</h3>
+          <h4 class="card-title mt-3 mb-4 text-center">Login</h4>
+          <p>
+            <a href="" class="btn btn-block btn-danger"> <i class="fab fa-google"></i>   Login via Google</a>
+          </p>
+          <p class="divider-text">
+            <span class="bg-light">OR</span>
+          </p>
+
+          <form>
+            <div class="form-group input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+              </div>
+              <input id="email_log" name="email_log" class="form-control" placeholder="Email address" type="email">
+            </div>
+
+
+            <div class="form-group input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+              </div>
+              <input id="pass_log" class="form-control" name="pass_log" placeholder="Enter password" type="password">
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block"> Login </button>
+            </div>
+
+            <a href="#register" id="reg-from-form" class="d-flex justify-content-center">Sign up for a new account</a>
+
+          </form>
+        </article>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <section id="form_movie" style="min-height: 100vh; background-color: #272727;">
+    <div class="container-fluid">
+      <div class="card bg-light">
+        <article class="card-body mx-auto" style="width: 50%;">
+          <h3 class="card-title mt-3 text-center">Get Movie and Snack Recommendation</h3>
+          <p class="text-center">Let us help you decide how to spend your lazy saturday night</p>
+
+          <div class="form-group">
+            <label>Movies or TV shows?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="watch" value="movie">
+              <label class="form-check-label" for="exampleRadios1">
+                Movie
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="watch" value="show">
+              <label class="form-check-label" for="exampleRadios2">
+                TV show
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="due_date">Snack category</label>
+            <select name="snack" id="snack" style="width: 100%;">
+              <option value="chips">Chips, popcorns, wings</option>
+              <option value="cookie">Cookies, cakes, and pastries</option>
+              <option value="natural">Fruits, salad, granolas</option>
+              <option value="asian">Noodles, fried rice, seafood</option>
+            </select> <br>
+          </div>
+
+          <div class="form-group mt-4">
+            <a href="#main-page" role="button" class="btn btn-danger btn-block"> Get recommendation </a>
+          </div>
+          </form>
+        </article>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <section id="main-page" style="min-height: 100vh; background-color: #272727;">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#" style="color: whitesmoke;">Todo</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="#create" style="color: whitesmoke;">Add a new Movie</a>
+          <form class="form-inline">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Sign out</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="d-flex container widgets mb-5 justify-content-between">
+        <div class="greeting">
+          <h2 class="mt-2">Hello, <span>user@gmail.com</span></h2>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+
+        <div class="card border-success mb-3 col-lg-4 col-md-6 col-sm-12 mx-4" style="max-width: 18rem;">
+          <div class="card-header bg-transparent border-danger">Category (movie/TVshow)</div>
+          <div class="card-body text-danger">
+            <h5 class="card-title">Movie or TV show title</h5>
+            <p class="card-text">Rating: <span id="rating"></span></p>
+            <p class="card-text">Food: <span id="food"></span></p>
+          </div>
+          <div class="card-footer bg-transparent border-danger d-flex justify-content-center">
+            <div>
+              <a href="#update" class="btn btn-outline-success btn-sm" role="button">Add more to the list</a>
+              <button class="btn btn-outline-danger btn-sm">Delete</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//geodata.solutions/includes/countrystatecity.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $('#login').show()
+      $('#register').hide()
+      $('#form_movie').hide()
+      $('#main_page').hide()
+    })
+
+  </script>
+</body>
+
+</html>
