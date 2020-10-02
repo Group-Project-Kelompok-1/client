@@ -5,6 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google-signin-client_id" content="602459969942-q4c7qca3tc90lg3f8r3p4m053vsm9t4s.apps.googleusercontent.com">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -30,6 +31,7 @@
             <a href="" class="btn btn-block btn-danger" role="button"> <i class="fab fa-google"></i>   Sign up via
               Google</a>
           </p>
+          <div class="g-signin2" data-onsuccess="onSignIn" id="login-google"></div>
           <p class="divider-text">
             <span class="bg-light">OR</span>
           </p>
@@ -63,6 +65,7 @@
     </div>
   </section>
 
+  
   <section id="login" style="min-height: 100vh; background-color: #272727;">
     <div class="container-fluid">
       <div class="card bg-light">
@@ -75,7 +78,7 @@
           <p class="divider-text">
             <span class="bg-light">OR</span>
           </p>
-
+          
           <form id="login">
             <div class="form-group input-group">
               <div class="input-group-prepend">
@@ -83,66 +86,67 @@
               </div>
               <input id="email" name="email_log" class="form-control" placeholder="Email address" type="email">
             </div>
-
-
+            
+            
             <div class="form-group input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
               </div>
               <input id="password" class="form-control" name="pass_log" placeholder="Enter password" type="password">
             </div>
-
+            
             <div class="form-group">
               <button type="submit" class="btn btn-primary btn-block"> Login </button>
             </div>
-
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            
             <a href="#" id="reg-form" class="d-flex justify-content-center">Sign up for a new account</a>
-
+            
           </form>
         </article>
       </div>
-
+      
     </div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <section id="form_movie" style="min-height: 100vh; background-color: #272727;">
-    <div class="container-fluid">
-      <div class="card bg-light">
-        <article class="card-body mx-auto" style="width: 50%;">
-          <h3 class="card-title mt-3 text-center">Get Movie and Snack Recommendation</h3>
-          <p class="text-center">Let us help you decide how to spend your lazy saturday night</p>
-
-          <div class="form-group">
-            <label for="due_date">Pick a genre</label>
-            <select name="genre" id="genre" style="width: 100%;">
-              <option value="horror">Horror</option>
-              <option value="action">Action</option>
-              <option value="romance">Romance</option>
-              <option value="drama">Drama</option>
-              <option value="animation">Animation</option>
-            </select> <br>
-          </div>
-
-          <div class="form-group">
-            <label for="due_date">Snack category</label>
-            <select name="snack" id="snack" style="width: 100%;">
-              <option value="chips">Chips, popcorns, wings</option>
-              <option value="cookie">Cookies, cakes, and pastries</option>
-              <option value="natural">Fruits, salad, granolas</option>
-              <option value="asian">Noodles, fried rice, seafood</option>
-            </select> <br>
-          </div>
-
-          <div class="form-group mt-4">
-            <a href="#main-page" role="button" class="btn btn-danger btn-block"> Get recommendation </a>
-          </div>
-          </form>
-        </article>
-      </div>
-
-    </div>
-    </div>
+<section id="form_movie" style="min-height: 100vh; background-color: #272727;">
+  <div class="container-fluid">
+    <div class="card bg-light">
+      <article class="card-body mx-auto" style="width: 50%;">
+        <h3 class="card-title mt-3 text-center">Get Movie and Snack Recommendation</h3>
+        <p class="text-center">Let us help you decide how to spend your lazy saturday night</p>
+        
+        <div class="form-group">
+          <label for="due_date">Pick a genre</label>
+          <select name="genre" id="genre" style="width: 100%;">
+            <option value="horror">Horror</option>
+            <option value="action">Action</option>
+            <option value="romance">Romance</option>
+            <option value="drama">Drama</option>
+            <option value="animation">Animation</option>
+          </select> <br>
+        </div>
+        
+        <div class="form-group">
+          <label for="due_date">Snack category</label>
+          <select name="snack" id="snack" style="width: 100%;">
+            <option value="chips">Chips, popcorns, wings</option>
+            <option value="cookie">Cookies, cakes, and pastries</option>
+            <option value="natural">Fruits, salad, granolas</option>
+            <option value="asian">Noodles, fried rice, seafood</option>
+          </select> <br>
+        </div>
+        
+        <div class="form-group mt-4">
+          <a href="#main-page" role="button" class="btn btn-danger btn-block" id="recommend"> Get recommendation </a>
+        </div>
+      </form>    
+    </article>
+  </div>
+  
+</div>
+</div>
   </section>
 
   <section id="main-page" style="min-height: 100vh; background-color: #272727;">
@@ -156,7 +160,7 @@
         <div class="navbar-nav">
           <a id="to-form" class="nav-link" href="#create" style="color: whitesmoke;">Add a new Movie</a>
           <form class="form-inline">
-            <button id="logout" class="btn btn-outline-light my-2 my-sm-0" type="submit">Sign out</button>
+            <button id="logout" class="btn btn-outline-light my-2 my-sm-0">Sign out</button>
           </form>
         </div>
       </div>
@@ -165,7 +169,7 @@
     <div class="container-fluid">
       <div class="d-flex container widgets mb-5 justify-content-between">
         <div class="greeting">
-          <h2 class="mt-2">Hello, <span>user@gmail.com</span></h2>
+          <h2 class="mt-2">Hello</h2>
         </div>
       </div>
 
@@ -194,13 +198,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="//geodata.solutions/includes/countrystatecity.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+  crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
-  <!-- <script src="/helpers.js"></script>
-  <script src="/main.js"></script> -->
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+  crossorigin="anonymous"></script>
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+  <script src="/helpers.js"></script>
+  <script src="/main.js"></script>
 </body>
 
 </html>

@@ -22,10 +22,31 @@ function showForm() {
 }
 
 function showMainPage() {
+	$("#login-google").hide()
 	$("#main-page").show()
 	$("#form_movie").hide()
 	$("#login").hide()
 	$("#register").hide()
+}
+
+function getRecommend (id) {
+	const genre = $("#genre").val()
+	const snack = $("#snack").val()
+	$.ajax({
+		method : 'POST',
+		url : `${baseURL}/moviessnack`,
+		data : {
+			genre,
+			snack
+		}
+	})
+	.done(respone => {
+		showMainPage()
+		fetchMovies()
+	})
+	.fail(err => {
+		console.log(err);
+	})
 }
 
 function login() {
@@ -48,6 +69,27 @@ function login() {
 			console.log(err)
 		})
 }
+
+// function googleLogin() {
+// 	const email = $("#email").val()
+// 	const password = $("#password").val()
+// 	// request server
+// 	$.ajax({
+// 		method: 'POST',
+// 		url: `${baseURL}/googleSignIn`,
+// 		data: {
+// 			email,
+// 			password
+// 		}
+// 	})
+// 		.done(respone => {
+// 			localStorage.setItem("access_token", respone.access_token)
+// 			showMainPage()
+// 		})
+// 		.fail(err => {
+// 			console.log(err)
+// 		})
+// }
 
 function register() {
 	const email = $("#email-reg").val()
@@ -72,10 +114,16 @@ function register() {
 function logout() {
 	localStorage.clear()
 	showLogin()
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
 }
 
+
+
 function fetchMovies() {
-	$.ajax(`${baseURL}/movies`, {
+	$.ajax(`${baseURL}/moviessnack`, {
 		method: 'GET',
 		headers: {
 			access_token: localStorage.getItem('access_token')
@@ -90,8 +138,8 @@ function fetchMovies() {
              src=${respone[i].imgUrl}
              alt="Card image cap">
           <div class="card-body">
-             <h5 class="card-title">${respone[i].title} (${respone[i].rating})</h5>
-            <p class="card-text">${respone[i].imdbid}</p>
+             <h5 class="card-title">${respone[i].title} (${respone[i].imdbrating})</h5>
+			<a href="imdb.com/${respone[i].imdbid}">Link Movie</a>
             <p class="card-text">${respone[i].snack}</p>
             <p class="card-text">${respone[i].zomatoUrl}</p>
             <a href="#" class="btn btn-outline-danger" role="button">Delete</a>
@@ -102,4 +150,23 @@ function fetchMovies() {
 		.fail(err => {
 			console.log(err)
 		})
+}
+
+
+function onSignIn(googleUser) {
+	var id_token = googleUser.getAuthResponse().id_token;
+	console.log(id_token);
+	$.ajax({
+		url : "http://localhost:3000/googleSignIn",
+		method : "POST",
+		headers : {
+			id_token : id_token
+		}
+	}).done(response => {
+		localStorage.setItem("token",response.token)
+		console.log(response.token);
+		showMainPage()
+	}).catch(err => {
+		console.log(err, "error");
+	})
 }
